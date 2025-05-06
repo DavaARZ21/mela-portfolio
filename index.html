@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mela Rahma Agustin - Graphic Designer & Photographer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .divider {
+            height: 5px;
+            background-color: #e9ccb1;
+            width: 100%;
+            margin: 2rem 0;
+        }
+        
+        .portfolio-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background-color: #fff;
+            border-left: 4px solid #e9ccb1;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e9ccb1;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-pic {
+            border: 5px solid #e9ccb1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.98);
+            z-index: 100;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #5a3921;
+            text-decoration: none;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: #5a3921;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                text-align: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .testimonial-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .portfolio-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#f8f5f2]">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#8b5a2b]">Mela Rahma Agustin</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-[#8b5a2b] transition">About</a>
+                <a href="#projects" class="hover:text-[#8b5a2b] transition">Projects</a>
+                <a href="#contact" class="hover:text-[#8b5a2b] transition">Contact</a>
+            </div>
+            <button class="md:hidden" id="menu-toggle">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <span class="close-btn" id="close-menu">
+            <i class="fas fa-times"></i>
+        </span>
+        <a href="#about" class="hover:text-[#8b5a2b] transition" onclick="closeMenu()">About</a>
+        <a href="#projects" class="hover:text-[#8b5a2b] transition" onclick="closeMenu()">Projects</a>
+        <a href="#testimonials" class="hover:text-[#8b5a2b] transition" onclick="closeMenu()">Testimonials</a>
+        <a href="#contact" class="hover:text-[#8b5a2b] transition" onclick="closeMenu()">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-[#f8f5f2] to-[#e9ccb1]">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 hero-content">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#5a3921]">Hi, I'm Mela Rahma Agustin</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-[#8b5a2b]">Graphic Designer & Photographer</h2>
+                <p class="text-lg mb-8 text-gray-700">Creating visual stories that captivate and inspire through design and photography.</p>
+                <a href="#contact" class="bg-[#8b5a2b] hover:bg-[#5a3921] text-white px-6 py-3 rounded-full font-medium transition">Get In Touch</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Mela Rahma Agustin" class="rounded-full profile-pic">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-[#5a3921]">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 about-content">
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6 text-gray-700">
+                        I am a graphic designer with a deep passion for visuals, who also pursues photography to capture inspiring moments that catch my attention. Visual art has become my primary language for expressing creativity and communicating with the world.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-700">
+                        As someone who is always thirsty for new experiences, I continue to explore innovative techniques and approaches in both design and photography. Effective communication skills allow me to collaborate productively with various teams and clients, ensuring each project realizes the desired vision.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-700">
+                        My meticulous attention to the smallest details—whether in design composition or photographic moments—guarantees stunning and meaningful results. Supported by a strong work ethic, I always pursue perfection and am never satisfied with mediocre standards.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/3 bg-[#f8f5f2] p-8 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-[#8b5a2b]">Details</h3>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2 text-[#5a3921]">Contact</h4>
+                        <p class="text-gray-700">+6285782460853</p>
+                        <p class="text-gray-700">butterflyyie2506@gmail.com</p>
+                        <p class="text-gray-700">GG. Cumi cumi RT 02/RW 08 No.42 Jakarta pusat</p>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2 text-[#5a3921]">Social Media</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/mlxfrs._" class="text-gray-700 hover:text-[#8b5a2b] transition" target="_blank">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@gracedigitalsco" class="text-gray-700 hover:text-[#8b5a2b] transition" target="_blank">
+                                <i class="fab fa-youtube text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2 text-[#5a3921]">Education</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>SMPN 119 JAKARTA (2019-2021)</li>
+                            <li>SMKS PONCOL (2022-2025)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2 text-[#5a3921]">Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Graphic Design</span>
+                            <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Photography</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-2 text-[#5a3921]">Language</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Indonesia</span>
+                            <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-[#f8f5f2]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-[#5a3921]">My Projects</h2>
+            
+            <div class="text-center mb-12">
+                <a href="https://www.notion.so/19174419ffda81c4bcd5ff0b72da734d?pvs=21" class="bg-[#8b5a2b] hover:bg-[#5a3921] text-white px-6 py-3 rounded-full font-medium transition" target="_blank">View All Projects</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Graphic Design Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#5a3921]">Brand Identity Design</h3>
+                        <p class="text-gray-700 mb-4">Complete brand identity package including logo, color palette, and typography for a modern business.</p>
+                        <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Graphic Design</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Photography Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#5a3921]">Urban Photography Series</h3>
+                        <p class="text-gray-700 mb-4">Capturing the essence of city life through a unique photographic perspective.</p>
+                        <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Photography</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Graphic Design Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#5a3921]">Social Media Campaign</h3>
+                        <p class="text-gray-700 mb-4">Series of social media graphics and posts for a product launch campaign.</p>
+                        <span class="bg-[#e9ccb1] text-[#5a3921] px-3 py-1 rounded-full text-sm">Graphic Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-[#5a3921]">Get In Touch</h2>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-[#f8f5f2] p-8 rounded-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 contact-grid">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-[#8b5a2b]">Contact Info</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-phone-alt text-[#8b5a2b] mt-1 mr-3"></i>
+                                    <span>+6285782460853</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-envelope text-[#8b5a2b] mt-1 mr-3"></i>
+                                    <span>butterflyyie2506@gmail.com</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-[#8b5a2b] mt-1 mr-3"></i>
+                                    <span>GG. Cumi cumi RT 02/RW 08 No.42 Jakarta pusat</span>
+                                </li>
+                            </ul>
+                            
+                            <h3 class="text-xl font-bold mt-8 mb-4 text-[#8b5a2b]">Follow Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.instagram.com/mlxfrs._" class="bg-[#e9ccb1] hover:bg-[#8b5a2b] text-[#5a3921] hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@gracedigitalsco" class="bg-[#e9ccb1] hover:bg-[#8b5a2b] text-[#5a3921] hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-[#8b5a2b]">Send a Message</h3>
+                            <form>
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded border border-[#e9ccb1] focus:outline-none focus:ring-1 focus:ring-[#8b5a2b]">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded border border-[#e9ccb1] focus:outline-none focus:ring-1 focus:ring-[#8b5a2b]">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded border border-[#e9ccb1] focus:outline-none focus:ring-1 focus:ring-[#8b5a2b]"></textarea>
+                                </div>
+                                <button type="submit" class="bg-[#8b5a2b] hover:bg-[#5a3921] text-white px-6 py-2 rounded-full font-medium transition w-full">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#5a3921] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold">Mela Rahma Agustin</h2>
+                    <p class="text-[#e9ccb1]">Graphic Designer & Photographer</p>
+                </div>
+                
+                
+            </div>
+            
+            <div class="divider mt-6"></div>
+            
+            <div class="text-center mt-6 text-sm text-[#e9ccb1]">
+                <p>&copy; 2023 Mela Rahma Agustin. All rights reserved.</p>
+                <p class="mt-2">Made with <i class="fas fa-heart text-red-400"></i> by Mela Rahma Agustin</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenuBtn.addEventListener('click', closeMenu);
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Close mobile menu when resizing to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
